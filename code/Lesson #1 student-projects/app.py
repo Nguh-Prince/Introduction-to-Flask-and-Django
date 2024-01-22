@@ -64,5 +64,4 @@ def projects():
                 }
             } for f in result
         ]
-        # print(url_for\/\('static', filename='css/bootstrap.min.css'))
         return render_template("projects.html", projects=result_dictionary)
