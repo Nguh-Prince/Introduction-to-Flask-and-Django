@@ -37,7 +37,7 @@ def index():
             cursor.execute(inset_into_projects_table_query, (latest_student_id, project_name, project_description))
             connection.commit()
         
-        return "Project saved successfully"
+        return "<p>Project saved successfully. Go back to <a href="/">index page</a></p>"
 
 @app.route('/projects')
 def projects():
