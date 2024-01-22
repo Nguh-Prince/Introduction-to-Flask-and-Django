@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projects</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/bootstrap.min.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/jquery.dataTables.min.css') }}"
+    />
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.dataTables.min.js') }}"></script>
+  </head>
+  <body>
+    <div class="container mt-3">
+      <table id="projects-table">
+        <thead>
+          <th>Student</th>
+          <th>Project</th>
+          <th>Project Description</th>
+        </thead>
+        {% for project in projects %}
+        <tr>
+          <td>{{ project.student.name }}</td>
+          <td>{{ project.project.name }}</td>
+          <td>{{ project.project.description }}</td>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+  </body>
+
+  <script>
+    $("#projects-table").DataTable();
+  </script>
+</html>
