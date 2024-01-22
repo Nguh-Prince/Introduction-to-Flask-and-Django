@@ -24,7 +24,7 @@ def index():
     # to the database 
     return render_template("index.html")
 
-@app.rout('/projects')
+@app.route('/projects')
 def projects():
     #TODO
     # get list of projects from the database
