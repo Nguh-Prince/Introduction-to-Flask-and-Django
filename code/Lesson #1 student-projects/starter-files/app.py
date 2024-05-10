@@ -73,4 +73,4 @@ def projects():
                 }
             } for f in result
         ]
-        return render_template("projects.html", projects=result_dictionary)
+        return result_dictionary
