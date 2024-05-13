@@ -108,3 +108,20 @@ class Shape:
         hyp = hypot(base, height)
 
         return cls.create_triangle([base, height, hyp])
+
+
+# Operator overloading example
+class Transaction:
+    def __init__(self, amount, date) -> None:
+        self.amount = amount
+        self.date = date
+
+    def __add__(self, other):
+        if not isinstance(other, (self.__class__, int, float)):
+            raise TypeError("Only numeric or Transaction types are supported")
+        elif isinstance(other, self.__class__):
+            return self.amount + other.amount
+        else: # other is a number
+            return self.amount + other
+        
+    
